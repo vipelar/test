@@ -21,8 +21,8 @@
     <div class="type_area">
         <input type="radio" name="type" class="type" value="+" checked> +
         <input type="radio" name="type" class="type" value="-"> -
-        <!-- <input type="radio" name="type" class="type" value="*"> ×
-        <input type="radio" name="type" class="type" value="/"> ÷ -->
+        <input type="radio" name="type" class="type" value="*"> ×
+        <input type="radio" name="type" class="type" value="/"> ÷
     </div>
 
     <button id="calculate">計算</button>
@@ -51,10 +51,10 @@
                     output = num1 + num2;
                 } else if (type === '-') {
                     output = num1 - num2;
-                // } else if (type === '*') {
-                //     output = num1 * num2;
-                // } else if (type === '/') {
-                //     output = num1 / num2;
+                } else if (type === '*') {
+                    output = num1 * num2;
+                } else if (type === '/') {
+                    output = num1 / num2;
                 }
     
             } else {
