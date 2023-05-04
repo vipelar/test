@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <title>電卓</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>電卓</h1>
+    <div class="number">
+        <label for="num1"></label>
+        <input type="number" name="num1" id="num1" required>
+        <label for="num2"></label>
+        <input type="number" name="num2" id="num2" required>
+    </div>
+
+    <div class="type_area">
+        <input type="radio" name="type" class="type" value="+" checked> +
+        <input type="radio" name="type" class="type" value="-"> -
+        <input type="radio" name="type" class="type" value="×"> ×
+        <input type="radio" name="type" class="type" value="÷"> ÷
+    </div>
+
+    <button id="calculate">計算</button>
+
+    <div id="output"> No Data </div>
+
+    <script>
+
+
+        $("#calculate").on('click', function () {
+            console.log("function is running");
+            const num1 = parseInt($('#num1').val());
+            const num2 = parseInt($('#num2').val());
+            console.log("num1 is " + num1);
+            console.log("num2 is " + num2);
+            const type = $('.type').val();
+            console.log("type is " + type);
+            let output = "数値を入力してください";
+            
+            if ( num1 != NaN && num2 != NaN ) {
+                if (type === '+') {
+                    output = num1 + num2;
+                } else if (type === '-') {
+                    output = num1 - num2;
+                } else if (type === '×') {
+                    output = num1 * num2;
+                } else {
+                    output = num1 / num2;
+                }
+    
+            } else {
+                output = "数値を入力してください";
+                console.log = "num1 or num2 is NaN."
+            }
+            $("#output").html(output);
+            console.log("output is " + output);
+            console.log("function finished.");
+        })
+
+    </script>
+
+</body>
+
+</html>
