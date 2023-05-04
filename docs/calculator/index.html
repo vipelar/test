@@ -29,6 +29,10 @@
 
     <div id="output"> No Data </div>
 
+    <noscript>
+        <p style="color: red;">JavaScriptを有効にしてください。</p>
+    </noscript>
+
     <script>
 
 
@@ -38,11 +42,11 @@
             const num2 = parseInt($('#num2').val());
             console.log("num1 is " + num1);
             console.log("num2 is " + num2);
-            const type = $('.type').val();
+            const type = $('input[name="type"]:checked').val();
             console.log("type is " + type);
             let output = "数値を入力してください";
             
-            if ( num1 != NaN && num2 != NaN ) {
+            if ( !isNaN(num1) && !isNaN(num2) ) {
                 if (type === '+') {
                     output = num1 + num2;
                 } else if (type === '-') {
